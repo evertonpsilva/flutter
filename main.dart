@@ -128,6 +128,8 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
 
+     //Definindo propriedades do grafico
+    
     var series = [
       new charts.Series(
         domainFn: (PrevisaoAposentadoria clickData, _) => clickData.mes,
@@ -192,7 +194,7 @@ class _HomeState extends State<Home> {
                           );
                         default:
                           if (snapshot.hasError) return Container();
-                          else return listScroll.horizontalListScroll(context, snapshot);
+                          else return listScroll.horizontalListScroll(context, snapshot);//Chamando o pageview
                       }
                     }
                   )
@@ -206,7 +208,7 @@ class _HomeState extends State<Home> {
                       RaisedButton(
                         onPressed: (){
                           setState(() {
-                            previsaoAposentadoria = previsao1Semestre;
+                            previsaoAposentadoria = previsao1Semestre;//onde ocorre a mudança de grafico para o 1º semestre
                           });
                         },
                         child: Text("1º Semestre",style: TextStyle(color: Colors.white),),
@@ -215,7 +217,7 @@ class _HomeState extends State<Home> {
                       RaisedButton(
                         onPressed: (){
                           setState(() {
-                            previsaoAposentadoria = previsao2Semestre;
+                            previsaoAposentadoria = previsao2Semestre;//onde ocorre a mudança de grafico para o 2º semestre
                           });
                         },
                         child: Text("2º Semestre",style: TextStyle(color: Colors.white),),
@@ -224,7 +226,7 @@ class _HomeState extends State<Home> {
                     ],
                   ),
                 ),
-                chartWidget,
+                chartWidget,//Chamando o widget do gráfico
               ],
             ),
           ),
